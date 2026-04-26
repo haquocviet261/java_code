@@ -7,6 +7,8 @@ public class AbstractionDemo {
         dog.makeSound();
         dog.sleep();
 
+
+
         System.out.println("\n=== 2. ABSTRACTION WITH INTERFACES (Services) ===");
         User admin = new User(1, "admin", "admin@demo.com");
         User customer = new User(101, "john_doe", "john@gmail.com");

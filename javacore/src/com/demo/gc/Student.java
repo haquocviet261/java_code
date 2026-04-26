@@ -37,7 +37,6 @@ class Student {
 
     public Student(String name) {
         this.name = name;
-        System.out.println(">>> Đã tạo đối tượng Student: " + this.name);
     }
 
     public String getName() {
@@ -76,11 +75,11 @@ class Student {
     @Override
     public String toString() {
         return "{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", className='" + className + '\'' +
-                ", diem='" + diem + '\'' +
-                ", gender=" + gender +
+                "name:'" + name + '\'' +
+                ", age:" + age +
+                ", className:'" + className + '\'' +
+                ", diem:'" + diem + '\'' +
+                ", gender:" + gender +
                 '}';
     }
 }

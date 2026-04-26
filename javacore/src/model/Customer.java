@@ -10,6 +10,11 @@ public class Customer {
         // To do
     }
 
+    public Customer(String name, boolean gender) {
+        this.name = name;
+        this.gender = gender;
+    }
+
     public String getName() {
         return name;
     }

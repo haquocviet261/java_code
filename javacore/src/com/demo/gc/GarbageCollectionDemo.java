@@ -2,52 +2,40 @@ package com.demo.gc;
 
 import com.demo.common.DateFormatter;
 
+import java.util.*;
+
 public class GarbageCollectionDemo {
-    static {
-        float PI = 3.14f;
-    }
+
 
     public static void main(String[] args) {
         // Tạo đối tượng và gán null
         Student phuong = new Student("Phuong", 21, "10a1", 10);
-        Student phi = new Student("Phuong", 21, "10a1", 8);
-        Date currentdate;
-        currentdate.format(DateFormatter.FORMAT_DD_MM_YYYY);
+        Student phi = new Student("Phi", 21, "10a1", 8);
+        Student phi1 = phi;
 
-        System.out.println(phuong.toString());
+        Student student1 = phi;
+        student1 = new Student();
+        List<Student> studentList = new ArrayList<>();
+        studentList.add(phuong);
+        studentList.add(phi);
+        studentList.add(phi);
+        studentList.add(phi);
+        studentList.add(phi);
 
-        // Tạo đối tượng ẩn danh qua hàm
-        createAnonymousStudent();
 
-        System.out.println("Yêu cầu JVM chạy Garbage Collector...");
-        System.gc(); 
+        Map<Integer, Student> studentMap = new HashMap<>();
+        studentMap.put(1, phuong);
+        studentMap.put(2, phi);
 
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        Student defautStudent = new Student("Viet");
 
-        System.out.println("Kết thúc chương trình demo GC.");
+        Student student = studentMap.getOrDefault(5, defautStudent);
+        System.out.println(student.toString());
+
+
+
+
+
     }
 
-    public static void sum(int a) {
-
-    }
-
-    public static void sum() {
-        System.out.println("0 tham so");
-    }
-
-    public static int sum(int a, int b) {
-        return 0;
-    }
-
-    public static int sum(float a, int b) {
-        return 0;
-    }
-
-    private static void createAnonymousStudent() {
-        Student s2 = new Student("Tran Thi B");
-    }
 }

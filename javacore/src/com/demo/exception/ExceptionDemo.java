@@ -7,11 +7,6 @@ import java.io.IOException;
 public class ExceptionDemo {
 
     public static void main(String[] args) {
-        System.out.println("--- DEMO UNCHECKED EXCEPTION ---");
-        handleUncheckedException(10, 0);
-
-        System.out.println("\n--- DEMO CHECKED EXCEPTION (File) ---");
-        handleCheckedExceptionWithFile();
 
         System.out.println("\n--- DEMO CUSTOM CHECKED EXCEPTION ---");
         try {

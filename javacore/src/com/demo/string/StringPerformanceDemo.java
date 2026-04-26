@@ -1,19 +1,26 @@
 package com.demo.string;
 
+import java.util.*;
+
 /**
  * Demo so sánh hiệu năng giữa String, StringBuilder và StringBuffer.
  * Bài học này giúp hiểu rõ tại sao KHÔNG nên dùng String để nối chuỗi trong vòng lặp lớn.
  */
 public class StringPerformanceDemo {
 
+    //
+
     public static void main(String[] args) {
+
         int iterations = 100_000; // Số lần lặp để thấy rõ sự khác biệt
+        // remove
+        List<Object> list = new ArrayList<>(30);
 
         System.out.println("--- BẮT ĐẦU SO SÁNH HIỆU NĂNG (" + iterations + " lần lặp) ---");
 
         // 1. Demo với String (Dùng toán tử +)
         // Lưu ý: Tôi giảm số lần lặp cho String vì nó quá chậm, nếu để 100k lần sẽ mất rất lâu.
-        testStringPerformance(10_000); 
+        testStringPerformance(iterations);
 
         // 2. Demo với StringBuffer (Thread-safe)
         testStringBufferPerformance(iterations);
@@ -21,6 +28,8 @@ public class StringPerformanceDemo {
         // 3. Demo với StringBuilder (Non-thread-safe)
         testStringBuilderPerformance(iterations);
     }
+
+    //--------------------- Stack------------------------ | -----------------------------------------------HEAP-----------------------------------------------
 
     /**
      * String: Mỗi lần cộng chuỗi sẽ tạo ra một đối tượng String mới trong bộ nhớ (String Pool/Heap).
