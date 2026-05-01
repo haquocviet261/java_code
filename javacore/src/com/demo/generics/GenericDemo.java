@@ -26,7 +26,7 @@ public class GenericDemo {
      */
     private static void demonstrateGenericClass() {
         Box<Integer> intBox = new Box<>(123);
-        Box<String> stringBox = new Box<>("Hello Generics");
+        Box<Integer> stringBox = new Box<>(123);
 
         System.out.println("Integer Box: " + intBox.get());
         System.out.println("String Box: " + stringBox.get());
