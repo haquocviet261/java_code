@@ -1,0 +1,2 @@
+Line 1: Buffered writing is efficient.
+Line 2: It reduces the number of I/O operations.

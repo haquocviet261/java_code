@@ -1,6 +1,9 @@
 package com.demo.string;
 
 import java.util.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * Demo so sánh hiệu năng giữa String, StringBuilder và StringBuffer.
@@ -10,23 +13,8 @@ public class StringPerformanceDemo {
 
     //
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
-        int iterations = 100_000; // Số lần lặp để thấy rõ sự khác biệt
-        // remove
-        List<Object> list = new ArrayList<>(30);
-
-        System.out.println("--- BẮT ĐẦU SO SÁNH HIỆU NĂNG (" + iterations + " lần lặp) ---");
-
-        // 1. Demo với String (Dùng toán tử +)
-        // Lưu ý: Tôi giảm số lần lặp cho String vì nó quá chậm, nếu để 100k lần sẽ mất rất lâu.
-        testStringPerformance(iterations);
-
-        // 2. Demo với StringBuffer (Thread-safe)
-        testStringBufferPerformance(iterations);
-
-        // 3. Demo với StringBuilder (Non-thread-safe)
-        testStringBuilderPerformance(iterations);
     }
 
     //--------------------- Stack------------------------ | -----------------------------------------------HEAP-----------------------------------------------

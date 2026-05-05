@@ -14,7 +14,6 @@ Gói này cung cấp một cái nhìn sâu sắc về lập trình đa luồng (
 - **Race Condition**: Vấn đề khi nhiều luồng cùng truy cập và sửa đổi dữ liệu chung.
 - **Synchronized**: Sử dụng từ khóa `synchronized` để khóa (lock) phương thức, đảm bảo chỉ một luồng truy cập tại một thời điểm.
 - **Atomic Variables**: Sử dụng các lớp trong gói `java.util.concurrent.atomic` (như `AtomicInteger`) để thực hiện các thao tác nguyên tử mà không cần dùng khóa (lock-free), giúp tăng hiệu năng.
-- **ReentrantLock** (`LockVisualizationDemo.java`): Trực quan hóa cách nhiều luồng tranh giành và lấy/nhả (acquire/release) khóa cho một tài nguyên chung (ví dụ: máy in). Cung cấp khả năng kiểm soát linh hoạt hơn so với `synchronized`.
 - **Deadlock** (`DeadlockDemo.java`): Trực quan hóa tình trạng "bế tắc" khi hai hoặc nhiều luồng đợi nhau giải phóng tài nguyên mãi mãi, khiến ứng dụng bị treo.
 
 ### 3. Thread Pool & Executor Service (`ExecutorServiceDemo.java`)

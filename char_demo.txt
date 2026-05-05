@@ -1,0 +1,2 @@
+Hello, Character Streams!
+chào anh phong

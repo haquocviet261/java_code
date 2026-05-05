@@ -52,7 +52,6 @@ public class DeadlockDemo {
                 }
             }
         }, "Thread-2");
-
         t1.start();
         t2.start();
 

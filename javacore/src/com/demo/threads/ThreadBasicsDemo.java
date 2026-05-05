@@ -28,7 +28,7 @@ public class ThreadBasicsDemo {
         t3.start();
 
         try {
-            // join() waits for threads to finish before main continues
+
             t1.join();
             t2.join();
             t3.join();

@@ -19,10 +19,7 @@ public class EmailServiceDemo {
         // 1. Save order to DB (Simulated)
         System.out.println("[Main Thread] Saving order " + orderId + " to database...");
         
-        // 2. Offload the slow email task to a background thread
-        emailWorkerPool.submit(() -> sendEmail(orderId, customerEmail));
-        
-        // 3. Return response to user immediately
+
         System.out.println("[Main Thread] Order " + orderId + " confirmed! (User doesn't wait for email)");
     }
 
