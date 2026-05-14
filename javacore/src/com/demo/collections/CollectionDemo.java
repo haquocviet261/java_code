@@ -1,6 +1,7 @@
 package com.demo.collections;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * Main class to demonstrate the Java Collection Framework.
@@ -32,18 +33,7 @@ public class CollectionDemo {
         products.add(new Product(2, "Tablet", 400.0));
         products.add(new Product(1, "Smartphone", 800.0)); // Duplicate allowed
 
-        System.out.println("Initial List (Maintains Order):");
-        for (Product p : products) System.out.println(p);
-
-        // Sorting using Comparable (by ID)
-        Collections.sort(products);
-        System.out.println("\nSorted by ID (Comparable):");
-        products.forEach(System.out::println);
-
-        // Sorting using Comparator (by Name)
-        products.sort(Comparator.comparing(Product::getName));
-        System.out.println("\nSorted by Name (Comparator):");
-        products.forEach(System.out::println);
+        products.stream().collect(Collectors.toList());
     }
 
     /**
@@ -56,8 +46,6 @@ public class CollectionDemo {
         productSet.add(new Product(1, "Laptop", 1200.0)); // Duplicate ignored (uses equals/hashCode)
         productSet.add(new Product(2, "Monitor", 300.0));
 
-        System.out.println("Set Size (Should be 2): " + productSet.size());
-        for (Product p : productSet) System.out.println(p);
 
         // Check for existence
         System.out.println("Contains Laptop? " + productSet.contains(new Product(1, "Laptop", 1200.0)));
@@ -69,9 +57,11 @@ public class CollectionDemo {
      */
     private static void demonstrateMap() {
         Map<String, Product> inventory = new HashMap<>();
-        inventory.put("101", new Product(101, "Server", 5000.0));
-        inventory.put("102", new Product(102, "Switch", 1500.0));
+        Product p = new Product(101, "Super Server", 8000.0);
+        inventory.put("101", p);
+        inventory.put("102", p);
         inventory.put("101", new Product(101, "Super Server", 8000.0)); // Key 101 replaced
+
 
         System.out.println("Map Values:");
         for (Map.Entry<String, Product> entry : inventory.entrySet()) {

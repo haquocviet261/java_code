@@ -7,8 +7,10 @@ public class Student {
     private String name;
     private int age;
     private double gpa;
+    private boolean gender;
 
     public Student() {
+
     }
 
     public Student(String id, String name, int age, double gpa) {

@@ -12,7 +12,7 @@ public abstract class Animal {
     }
 
     // Abstract method: Không có thân hàm, buộc lớp con phải triển khai
-    public abstract void makeSound();
+    protected abstract void makeSound();
 
     // Concrete method: Lớp con có thể sử dụng luôn
     public void sleep() {
